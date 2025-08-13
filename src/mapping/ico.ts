@@ -8,11 +8,14 @@ import {
 } from "../../generated/schema";
 import { ZERO_BD, ZERO_BI, ONE_BI } from "../common/constants";
 import { getOrCreateAccount } from "../common/helpers";
-import { getOrCreateTransaction, TRANSACTION_TYPE_ICO } from "../common/transaction";
+import {
+  getOrCreateTransaction,
+  TRANSACTION_TYPE_ICO,
+} from "../common/transaction";
 
 export function handleRequestCreate(event: RequestCreated): void {
   let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_ICO);
-  
+
   let requestId = event.params.numOfRequest;
   let creator: Account;
 
@@ -21,8 +24,10 @@ export function handleRequestCreate(event: RequestCreated): void {
     creator = Account.load(project.creator)!;
   } else {
     let creatorAddress = event.transaction.from;
-    creator = Account.load(creatorAddress.toHexString());
-    if (!creator) {
+    let loadedCreator = Account.load(creatorAddress.toHexString());
+    if (loadedCreator) {
+      creator = loadedCreator;
+    } else {
       creator = new Account(creatorAddress.toHexString());
       creator.usdSwapped = ZERO_BD;
       creator.save();

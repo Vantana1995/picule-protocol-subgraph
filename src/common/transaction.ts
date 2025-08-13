@@ -1,4 +1,3 @@
-// common/transaction.ts
 import { ethereum } from "@graphprotocol/graph-ts";
 import { Transaction } from "../../generated/schema";
 import { ZERO_BI } from "./constants";
@@ -24,8 +23,9 @@ export function getOrCreateTransaction(
     transaction.timestamp = event.block.timestamp;
     transaction.type = type;
 
-    if (event.receipt) {
-      transaction.gasUsed = event.receipt.gasUsed;
+    let receipt = event.receipt;
+    if (receipt !== null) {
+      transaction.gasUsed = receipt.gasUsed;
       transaction.gasPrice = event.transaction.gasPrice;
     } else {
       transaction.gasUsed = ZERO_BI;

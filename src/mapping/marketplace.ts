@@ -15,10 +15,10 @@ import {
 } from "../../generated/schema";
 import { ZERO_BD, ZERO_BI, ONE_BI } from "../common/constants";
 import { getOrCreateAccount } from "../common/helpers";
-import { getOrCreateTransaction, TransactionType } from "../common/transaction";
+import { getOrCreateTransaction, TRANSACTION_TYPE_MARKETPLACE } from "../common/transaction";
 
 export function handleItemListed(event: ItemListed): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.MARKETPLACE);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_MARKETPLACE);
 
   let seller = getOrCreateAccount(event.params.seller);
 
@@ -54,7 +54,7 @@ export function handleItemListed(event: ItemListed): void {
 }
 
 export function handleItemSold(event: ItemSold): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.MARKETPLACE);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_MARKETPLACE);
 
   let seller = getOrCreateAccount(event.params.seller);
   let buyer = getOrCreateAccount(event.params.buyer);
@@ -103,7 +103,7 @@ export function handleItemSold(event: ItemSold): void {
 }
 
 export function handleListingCancelled(event: ListingCancelled): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.MARKETPLACE);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_MARKETPLACE);
 
   let seller = getOrCreateAccount(event.params.seller);
 
@@ -147,7 +147,7 @@ export function handleListingCancelled(event: ListingCancelled): void {
 }
 
 export function handleListingUpdated(event: ListingUpdated): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.MARKETPLACE);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_MARKETPLACE);
 
   let listingId = event.params.nftContract
     .toHexString()

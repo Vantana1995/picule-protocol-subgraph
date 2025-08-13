@@ -12,9 +12,9 @@ import {
   fetchNFTSymbol,
   fetchNFTURI,
 } from "../common/helpers";
-import { getOrCreateTransaction, TransactionType } from "../common/transaction";
+import { getOrCreateTransaction, TRANSACTION_TYPE_ERC721 } from "../common/transaction";
 export function handleTransfer(event: Transfer): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.ERC721);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_ERC721);
 
   let fromAddress = event.params.from;
   let toAddress = event.params.to;

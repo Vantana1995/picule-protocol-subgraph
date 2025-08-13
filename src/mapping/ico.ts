@@ -8,10 +8,10 @@ import {
 } from "../../generated/schema";
 import { ZERO_BD, ZERO_BI, ONE_BI } from "../common/constants";
 import { getOrCreateAccount } from "../common/helpers";
-import { getOrCreateTransaction, TransactionType } from "../common/transaction";
+import { getOrCreateTransaction, TRANSACTION_TYPE_ICO } from "../common/transaction";
 
 export function handleRequestCreate(event: RequestCreated): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.ICO);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_ICO);
   
   let requestId = event.params.numOfRequest;
   let creator: Account;
@@ -41,7 +41,7 @@ export function handleRequestCreate(event: RequestCreated): void {
 }
 
 export function handleContribute(event: Contributed): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.ICO);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_ICO);
 
   let icoRequest = ICORequest.load(event.params.numOfProject.toString());
   if (!icoRequest) {

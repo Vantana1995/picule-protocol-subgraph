@@ -23,10 +23,13 @@ import {
   getOrCreateAccount,
 } from "../common/helpers";
 
-import { getOrCreateTransaction, TransactionType } from "../common/transaction";
+import {
+  getOrCreateTransaction,
+  TRANSACTION_TYPE_TLM,
+} from "../common/transaction";
 
 export function handleProjectCreate(event: ProjectCreated): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.TLM);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_TLM);
 
   let creator = getOrCreateAccount(event.params.creator);
 

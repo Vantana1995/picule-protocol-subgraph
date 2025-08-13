@@ -13,10 +13,10 @@ import {
 } from "../../generated/schema";
 import { ZERO_BD, ONE_BI } from "../common/constants";
 import { getOrCreateAccount } from "../common/helpers";
-import { getOrCreateTransaction, TransactionType } from "../common/transaction";
+import { getOrCreateTransaction, TRANSACTION_TYPE_FUNDS } from "../common/transaction";
 
 export function handleCheckpointUpdate(event: Checkpointupdate): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.FUNDS);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_FUNDS);
 
   let checkpointId = event.transaction.hash
     .toHexString()
@@ -36,7 +36,7 @@ export function handleCheckpointUpdate(event: Checkpointupdate): void {
 }
 
 export function handleLpTokenLocked(event: LPTokenLocked): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.FUNDS);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_FUNDS);
 
   let lpProvider = getOrCreateAccount(event.params.lpProvider);
 
@@ -90,7 +90,7 @@ export function handleLpTokenLocked(event: LPTokenLocked): void {
 }
 
 export function handleBonusClaimed(event: BonusClaimed): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.FUNDS);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_FUNDS);
 
   let claimer = getOrCreateAccount(event.params.user);
 

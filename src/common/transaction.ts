@@ -3,15 +3,13 @@ import { ethereum } from "@graphprotocol/graph-ts";
 import { Transaction } from "../../generated/schema";
 import { ZERO_BI } from "./constants";
 
-export class TransactionType {
-  static DEX = "DEX";
-  static ERC20 = "ERC20";
-  static ERC721 = "ERC721";
-  static MARKETPLACE = "MARKETPLACE";
-  static ICO = "ICO";
-  static TLM = "TLM";
-  static FUNDS = "FUNDS";
-}
+export const TRANSACTION_TYPE_DEX = "DEX";
+export const TRANSACTION_TYPE_ERC20 = "ERC20";
+export const TRANSACTION_TYPE_ERC721 = "ERC721";
+export const TRANSACTION_TYPE_MARKETPLACE = "MARKETPLACE";
+export const TRANSACTION_TYPE_ICO = "ICO";
+export const TRANSACTION_TYPE_TLM = "TLM";
+export const TRANSACTION_TYPE_FUNDS = "FUNDS";
 
 export function getOrCreateTransaction(
   event: ethereum.Event,
@@ -34,13 +32,13 @@ export function getOrCreateTransaction(
       transaction.gasPrice = ZERO_BI;
     }
 
-    if (type == TransactionType.DEX) {
+    if (type == TRANSACTION_TYPE_DEX) {
       transaction.mints = [];
       transaction.burns = [];
       transaction.swaps = [];
     }
 
-    if (type == TransactionType.ERC20) {
+    if (type == TRANSACTION_TYPE_ERC20) {
       transaction.erc20Mints = [];
       transaction.erc20Burns = [];
     }

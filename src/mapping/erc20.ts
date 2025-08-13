@@ -3,10 +3,10 @@ import { Transfer } from "../../generated/templates/ERC20/ERC20";
 import { ERC20Token, ERC20Burn, ERC20Mint } from "../../generated/schema";
 import { ONE_BI } from "../common/constants";
 import { getOrCreateAccount, convertTokenToDecimal } from "../common/helpers";
-import { getOrCreateTransaction, TransactionType } from "../common/transaction";
+import { getOrCreateTransaction, TRANSACTION_TYPE_ERC20 } from "../common/transaction";
 
 export function handleTransfer(event: Transfer): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.ERC20);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_ERC20);
 
   let fromAddress = event.params.from;
   let toAddress = event.params.to;

@@ -40,7 +40,7 @@ import {
   getTrackedVolumeUSD,
 } from "../common/pricing";
 import { updateTokenMinuteData } from "../common/minuteUpdates";
-import { getOrCreateTransaction, TransactionType } from "../common/transaction";
+import { getOrCreateTransaction, TRANSACTION_TYPE_DEX} from "../common/transaction";
 
 function isCompleteMint(mintId: string): boolean {
   return MintEvent.load(mintId)!.sender !== null;
@@ -76,7 +76,7 @@ export function handleTransfer(event: Transfer): void {
   }
 
   // get or create transaction
-  let transaction = getOrCreateTransaction(event, TransactionType.DEX);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_DEX);
 
   // mints
   let mints = transaction.mints;
@@ -341,7 +341,7 @@ export function handleSync(event: Sync): void {
   token1.save();
 }
 export function handleSwap(event: Swap): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.DEX);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_DEX);
   let pair = Pair.load(event.address.toHexString());
   if (!pair) {
     return;
@@ -536,7 +536,7 @@ export function handleSwap(event: Swap): void {
 export function handleMint(event: Mint): void {
   // loaded from a previous handler creating this transaction
   // transfer event is emitted first and mint event is emitted afterwards, good to confirm with a protocol eng
-  let transaction = getOrCreateTransaction(event, TransactionType.DEX);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_DEX);
 
   let mints = transaction.mints;
   let mint = MintEvent.load(mints[mints.length - 1]);
@@ -603,7 +603,7 @@ export function handleMint(event: Mint): void {
 }
 
 export function handleBurn(event: Burn): void {
-  let transaction = getOrCreateTransaction(event, TransactionType.DEX);
+  let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_DEX);
 
   let burns = transaction.burns;
   let burn = BurnEvent.load(burns[burns.length - 1]);

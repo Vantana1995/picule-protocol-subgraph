@@ -2,6 +2,7 @@ import { ethereum } from "@graphprotocol/graph-ts";
 import { Transaction } from "../../generated/schema";
 import { ZERO_BI } from "./constants";
 
+
 export const TRANSACTION_TYPE_DEX = "DEX";
 export const TRANSACTION_TYPE_ERC20 = "ERC20";
 export const TRANSACTION_TYPE_ERC721 = "ERC721";
@@ -36,9 +37,17 @@ export function getOrCreateTransaction(
       transaction.mints = [];
       transaction.burns = [];
       transaction.swaps = [];
+    } else {
+      
+      transaction.mints = [];
+      transaction.burns = [];
+      transaction.swaps = [];
     }
 
     if (type == TRANSACTION_TYPE_ERC20) {
+      transaction.erc20Mints = [];
+      transaction.erc20Burns = [];
+    } else { 
       transaction.erc20Mints = [];
       transaction.erc20Burns = [];
     }

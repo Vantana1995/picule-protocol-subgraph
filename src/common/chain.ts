@@ -1,13 +1,13 @@
 import { Address, BigDecimal, BigInt } from "@graphprotocol/graph-ts";
 
 export const FACTORY_ADDRESS = Address.fromString(
-  "0x4c4a92931a3f0a4fb369c61fd990efce28b044e7"
+  "0x88f935cc12efc73f1590bfc12178539351b145c5"
 );
 export const TOKEN_LAUNCH_MANAGER_ADDRESS = Address.fromString(
-  "0x8375e6f077c5a4b6ff05620928588e04717e8a4e"
+  "0xbb29be458dcaa439f1259bc9b42a7240b1d37af5"
 );
 export const ICO_ADDRESS = Address.fromString(
-  "0x541fb0d5ba646f7ef0eb1fece90032c389592b1e"
+  "0x7927a4bd40ab5a60c4a319ea55424469560e947b"
 );
 export const MARKETPLACE_ADDRESS = Address.fromString(
   "0xe8c3490eed91ba902731ea2bbb69426282604012"

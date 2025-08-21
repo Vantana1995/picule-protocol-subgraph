@@ -58,7 +58,7 @@ export class TokenDefinition {
 }
 export const STATIC_TOKEN_DEFINITIONS: TokenDefinition[] = [
   new TokenDefinition(
-    Address.fromString("0xc70c0da850c8d042a1be575d12f45e4392d9a889"),
+    Address.fromString("0xe91df27c401084ec11998766d64717f998b47b33"),
     "MPC",
     "MrPicule Token",
     BigInt.fromI32(18)

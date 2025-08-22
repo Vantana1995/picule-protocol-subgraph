@@ -16,12 +16,12 @@ Picule is a decentralized protocol for automated ERC20 token exchange that makes
 
 | Contract           | Address                                      | Description           |
 | ------------------ | -------------------------------------------- | --------------------- |
-| Factory            | `0x7b2f3f824505518047f08513df6e43ba0992a84a` | DEX pair factory      |
-| TokenLaunchManager | `0xe2a924d00f705a9a4d19030eaa714695facfad89` | Token creation system |
-| ICO                | `0x5fcd7b9a4520b717d5b06a7bdcc27d8524ef3329` | ICO management        |
+| Factory            | `0x88f935cc12efc73f1590bfc12178539351b145c5` | DEX pair factory      |
+| TokenLaunchManager | `0xbb29be458dcaa439f1259bc9b42a7240b1d37af5` | Token creation system |
+| ICO                | `0x7927a4bd40ab5a60c4a319ea55424469560e947b` | ICO management        |
 | Marketplace        | `0xe8c3490eed91ba902731ea2bbb69426282604012` | NFT marketplace       |
-| NFTPicule          | `0x0b7d93e656d83d6ca89749991d746429c93b51c5` | Main NFT collection   |
-| MPC Token          | `0x9d76e3b5b488ae77e2af8f33ac9fd3771fcc94a8` | Protocol token        |
+| NFTPicule          | `0x1a91f666527b04fb8dfe8ae05fd2e628e9370bad` | Main NFT collection   |
+| MPC Token          | `0xe91df27c401084ec11998766d64717f998b47b33` | Protocol token        |
 
 ## Core Entities
 

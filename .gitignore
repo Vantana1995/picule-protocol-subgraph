@@ -2,4 +2,4 @@ build/
 generated/
 .env
 node_modules/
-abis/
+

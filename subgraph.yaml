@@ -1,4 +1,4 @@
-specVersion: 0.0.14
+specVersion: 1.3.0
 description: Picule is decentralized protocol for automated erc20 token exchange and make your NFT valuable on Monad
 repository:
 schema:
@@ -13,7 +13,7 @@ dataSources:
       startBlock: 32147522
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/factory.ts
       entities:
@@ -39,7 +39,7 @@ dataSources:
       startBlock: 32147439
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/tlm.ts
       entities:
@@ -70,7 +70,7 @@ dataSources:
       startBlock: 32147627
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/ico.ts
       entities:
@@ -97,7 +97,7 @@ dataSources:
       startBlock: 32147343
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/funds.ts
       entities:
@@ -128,7 +128,7 @@ dataSources:
       startBlock: 32147065
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/erc721.ts
       entities:
@@ -152,7 +152,7 @@ dataSources:
       startBlock: 32147261
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/erc20.ts
       entities:
@@ -176,7 +176,7 @@ dataSources:
       startBlock: 32147261
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/marketplace.ts
       entities:
@@ -208,7 +208,7 @@ templates:
       abi: Pair
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/pair.ts
       entities:
@@ -246,7 +246,7 @@ templates:
       abi: ERC20
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/erc20.ts
       entities:
@@ -268,7 +268,7 @@ templates:
       abi: ERC721
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/erc721.ts
       entities:
@@ -290,7 +290,7 @@ templates:
       abi: FundsManager
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.7
+      apiVersion: 0.0.9
       language: wasm/assemblyscript
       file: ./src/mapping/funds.ts
       entities:

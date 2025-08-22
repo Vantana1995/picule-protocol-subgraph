@@ -12,28 +12,40 @@ import {
   getOrCreateTransaction,
   TRANSACTION_TYPE_ICO,
 } from "../common/transaction";
+import { log } from "@graphprotocol/graph-ts";
 
 export function handleRequestCreate(event: RequestCreated): void {
+  log.info("=== RequestCreated handler called ===", []);
+  log.info("Request ID: {}", [event.params.numOfRequest.toString()]);
+  log.info("Block number: {}", [event.block.number.toString()]);
+  log.info("Transaction hash: {}", [event.transaction.hash.toHexString()]);
+
   let transaction = getOrCreateTransaction(event, TRANSACTION_TYPE_ICO);
+  log.info("Transaction created/loaded: {}", [transaction.id]);
 
   let requestId = event.params.numOfRequest;
   let creator: Account;
-
   let project = Project.load(requestId.toString());
+
   if (project) {
+    log.info("Project found for request ID: {}", [requestId.toString()]);
     creator = Account.load(project.creator)!;
   } else {
+    log.info("No project found, creating new creator account", []);
     let creatorAddress = event.transaction.from;
     let loadedCreator = Account.load(creatorAddress.toHexString());
     if (loadedCreator) {
       creator = loadedCreator;
+      log.info("Existing creator loaded: {}", [creator.id]);
     } else {
       creator = new Account(creatorAddress.toHexString());
       creator.usdSwapped = ZERO_BD;
       creator.save();
+      log.info("New creator created: {}", [creator.id]);
     }
   }
 
+  log.info("Creating ICO request entity", []);
   let icoRequest = new ICORequest(event.params.numOfRequest.toString());
   icoRequest.numOfRequest = event.params.numOfRequest;
   icoRequest.creator = creator.id;
@@ -43,6 +55,9 @@ export function handleRequestCreate(event: RequestCreated): void {
   icoRequest.totalContributors = ZERO_BI;
   icoRequest.active = true;
   icoRequest.save();
+
+  log.info("ICO request saved successfully: {}", [icoRequest.id]);
+  log.info("=== RequestCreated handler completed ===", []);
 }
 
 export function handleContribute(event: Contributed): void {

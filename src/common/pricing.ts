@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
 import { BigDecimal, BigInt } from "@graphprotocol/graph-ts/index";
-import { Pair as PairContract } from "../../generated/templates/Pair/Pair"
+import { Pair as PairContract } from "../../generated/templates/Pair/Pair";
 import { Bundle, Pair, PairTokenLookup, Token } from "../../generated/schema";
 import {
   MON_USDC_EXTERNAL_POOL,

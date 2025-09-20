@@ -1,26 +1,26 @@
 import { Address, BigDecimal, BigInt } from "@graphprotocol/graph-ts";
 
 export const FACTORY_ADDRESS = Address.fromString(
-  "0x88f935cc12efc73f1590bfc12178539351b145c5"
+  "0x7a0ba2f48ecc7db655cd5890e1e53b01196c3616"
 );
 export const TOKEN_LAUNCH_MANAGER_ADDRESS = Address.fromString(
-  "0xbb29be458dcaa439f1259bc9b42a7240b1d37af5"
+  "0x2223e98224a6c1f19dfba9e6f249606cdc21bd9d"
 );
 export const ICO_ADDRESS = Address.fromString(
-  "0x7927a4bd40ab5a60c4a319ea55424469560e947b"
+  "0xf551cce75e94b08409cc4b6f69132abee27324c3"
 );
 export const MARKETPLACE_ADDRESS = Address.fromString(
-  "0xe8c3490eed91ba902731ea2bbb69426282604012"
+  "0x6b705c2e5ab18eb9b888ba317420d9f1c5a46dc2"
 );
 
 export const USDC_ADDRESS = Address.fromString(
-  "0xf817257fed379853cDe0fa4F97AB987181B1E5Ea"
+  "0xbe72e441bf55620febc26715db68d3494213d8cb"
 );
 export const MON_ADDRESS = Address.fromString(
-  "0x760AfE86e5de5fa0Ee542fc7B7B713e1c5425701"
+  "0xfff9976782d46cc05630d1f6ebab18b2324d6b14"
 );
 export const MON_USDC_EXTERNAL_POOL = Address.fromString(
-  "0xEc8eb233538aBFc97f337da8ec3d1b57fbe31895"
+  "0x92b8274aba7ab667bee7eb776ec1de32438d90bf"
 );
 
 export const REFERENCE_TOKEN = MON_ADDRESS;

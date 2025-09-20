@@ -85,8 +85,16 @@
   },
   {
     "inputs": [
-      { "internalType": "address", "name": "_icoManager", "type": "address" },
-      { "internalType": "address", "name": "_router", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "_icoManager",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_router",
+        "type": "address"
+      },
       {
         "internalType": "address",
         "name": "_erc20Implementation",
@@ -100,6 +108,16 @@
       {
         "internalType": "address",
         "name": "_FMImplementation",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_factory",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_wmon",
         "type": "address"
       }
     ],
